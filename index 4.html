@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BREEZE Massage — Your Sanctuary in the City | BGC • Makati • Pasay</title>
+<meta name="description" content="Manila's most loved massage sanctuary. Swedish, Shiatsu, Thai and Signature therapies. Open daily 2PM-12MN in BGC, Makati & Pasay. Book your breeze today."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,300;9..144,1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      fontFamily:{serif:['Fraunces','serif'],sans:['Plus Jakarta Sans','sans-serif']},
+      colors:{
+        cream:'#FBF8F3', paper:'#F3EDE3', line:'#E8DDD0', ink:'#1E2E2A',
+        forest:'#162E29', forest2:'#213F38', sage:'#8FA79E', clay:'#D7A77A', clay2:'#C08A5E'
+      },
+      borderRadius:{'4xl':'32px'}
+    }
+  }
+}
+</script>
+<style>
+:root{--cream:#FBF8F3;--paper:#F3EDE3;--line:#E8DDD0;--ink:#1E2E2A;--forest:#162E29;--forest2:#213F38;--sage:#8FA79E;--clay:#D7A77A}
+*{font-variant-ligatures:common-ligatures; -webkit-font-smoothing:antialiased}
+body{background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif}
+.font-serif{font-family:'Fraunces',serif}
+.reveal{opacity:0;transform:translateY(18px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.card-hover{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+.card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px -16px rgba(22,46,41,.18)}
+.btn-pill{border-radius:999px;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.btn-pill:active{transform:scale(.98)}
+.nav-link{position:relative}
+.nav-link:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:currentColor;transition:width .35s}
+.nav-link:hover:after,.nav-link.active:after{width:100%}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+.slot{border:1px solid var(--line);transition:all .2s}
+.slot:hover{border-color:var(--forest);background:var(--paper)}
+.slot.active{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.shimmer{background:linear-gradient(100deg, #F3EDE3 20%, #FBF8F3 40%, #F3EDE3 60%);background-size:200% 100%;animation:shim 1.8s infinite}
+@keyframes shim{0%{background-position:-200% 0}100%{background-position:200% 0}}
+</style>
+</head>
+<body class="bg-cream selection:bg-forest selection:text-cream">
+<!-- Top Bar -->
+<div class="w-full bg-forest text-cream/80 text-[11px] tracking-[0.14em] font-medium">
+  <div class="max-w-[1320px] mx-auto px-6 lg:px-8 h-9 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <span class="hidden md:inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span> OPEN DAILY 2PM — 12MN</span>
+      <span class="opacity-60 hidden md:block">BGC • MAKATI • PASAY</span>
+      <span class="md:hidden">OPEN DAILY 2PM—12MN • 3 BRANCHES</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="tel:+639171234567" class="hover:text-cream transition">+63 917 123 4567</a>
+      <span class="opacity-30">|</span>
+      <span class="hidden sm:inline opacity-70">4.9★ (2,847 reviews)</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="header" class="sticky top-0 z-40 bg-[rgba(251,248,243,0.84)] backdrop-blur-xl border-b border-line">
+  <div class="max-w-[1320px] mx-auto px-6 lg:px-8 h-[74px] flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 rounded-full bg-forest text-cream grid place-items-center font-serif text-[18px] tracking-[-0.02em] group-hover:bg-forest2 transition">B</div>
+      <div class="leading-none">
+        <div class="font-serif text-[22px] tracking-[-0.02em] font-[500] -mb-0.5">BREEZE</div>
+        <div class="text-[9px] tracking-[0.28em] opacity-60 font-medium">MASSAGE</div>
+      </div>
+      <div class="hidden lg:flex ml-6 pl-6 border-l border-line items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+        <span class="text-[11px] tracking-[0.12em] opacity-60">MANILA • EST. 2014</span>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[12.5px] tracking-[0.12em] font-semibold">
+      <a href="#home" class="nav-link">HOME</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#services" class="nav-link">SERVICES</a>
+      <a href="#branches" class="nav-link">BRANCHES</a>
+      <a href="#promos" class="nav-link">PROMOS</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#dashboard" class="hidden md:inline-flex text-[11px] tracking-[0.12em] font-semibold opacity-60 hover:opacity-100 transition">OWNER</a>
+      <a href="#booking" class="btn-pill hidden lg:inline-flex bg-forest text-cream px-7 h-[42px] items-center text-[13px] tracking-[0.06em] font-semibold hover:bg-forest2">BOOK NOW — ₱</a>
+      <button id="mobileToggle" class="lg:hidden w-11 h-11 rounded-full border border-line grid place-items-center bg-white">
+        <span class="w-5 h-[1.5px] bg-ink block relative before:content-[''] before:absolute before:w-5 before:h-[1.5px] before:bg-ink before:-top-1.5 after:content-[''] after:absolute after:w-5 after:h-[1.5px] after:bg-ink after:top-1.5"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div id="mobileDrawer" class="fixed inset-0 z-50 translate-x-full transition-transform duration-500 lg:hidden">
+  <div class="absolute inset-0 bg-forest/20 backdrop-blur-sm" id="drawerBackdrop"></div>
+  <div class="absolute right-0 top-0 h-full w-[86%] max-w-[380px] bg-cream border-l border-line flex flex-col">
+    <div class="h-[74px] px-6 flex items-center justify-between border-b border-line">
+      <span class="font-serif text-xl">Menu</span>
+      <button id="drawerClose" class="w-10 h-10 rounded-full border border-line grid place-items-center">✕</button>
+    </div>
+    <div class="p-8 flex flex-col gap-6 text-[13px] tracking-[0.14em] font-semibold">
+      <a href="#home" class="mobile-link flex justify-between">HOME <span class="opacity-30">01</span></a>
+      <a href="#about" class="mobile-link flex justify-between">ABOUT <span class="opacity-30">02</span></a>
+      <a href="#services" class="mobile-link flex justify-between">SERVICES <span class="opacity-30">03</span></a>
+      <a href="#branches" class="mobile-link flex justify-between">BRANCHES <span class="opacity-30">04</span></a>
+      <a href="#promos" class="mobile-link flex justify-between">PROMOS <span class="opacity-30">05</span></a>
+      <a href="#faq" class="mobile-link flex justify-between">FAQ <span class="opacity-30">06</span></a>
+    </div>
+    <div class="mt-auto p-6 border-t border-line">
+      <a href="#booking" class="btn-pill bg-forest text-cream w-full h-[54px] grid place-items-center font-semibold tracking-wide">BOOK AN APPOINTMENT</a>
+      <div class="mt-4 text-[11px] leading-5 opacity-60 text-center">Open Daily 2PM-12MN • BGC • Makati • Pasay<br/>+63 917 123 4567</div>
+    </div>
+  </div>
+</div>
+
+<!-- App Root -->
+<main id="appRoot" class="min-h-[80vh] transition-opacity duration-300"></main>
+
+<!-- Footer -->
+<footer class="bg-forest text-cream mt-24">
+  <div class="max-w-[1320px] mx-auto px-6 lg:px-8">
+    <div class="py-16 lg:py-20 grid lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] gap-12 border-b border-white/10">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-cream text-forest grid place-items-center font-serif text-xl">B</div>
+          <div><div class="font-serif text-2xl leading-none">BREEZE</div><div class="text-[9px] tracking-[0.28em] opacity-60">MASSAGE</div></div>
+        </div>
+        <p class="mt-6 text-[14px] leading-6 opacity-70 max-w-[32ch]">Where stress ends and breeze begins. A quiet, clean, professional sanctuary for 10+ years in the heart of Manila.</p>
+        <div class="mt-8 flex gap-3">
+          <a class="w-9 h-9 rounded-full border border-white/20 grid place-items-center hover:bg-cream hover:text-forest transition">IG</a>
+          <a class="w-9 h-9 rounded-full border border-white/20 grid place-items-center hover:bg-cream hover:text-forest transition">FB</a>
+          <a class="w-9 h-9 rounded-full border border-white/20 grid place-items-center hover:bg-cream hover:text-forest transition">TK</a>
+        </div>
+      </div>
+      <div>
+        <div class="text-[11px] tracking-[0.18em] opacity-50 mb-6">EXPLORE</div>
+        <div class="flex flex-col gap-3 text-[14px] opacity-80">
+          <a href="#services" class="hover:opacity-100 hover:translate-x-1 transition">Services & Pricing</a>
+          <a href="#branches" class="hover:opacity-100 hover:translate-x-1 transition">Our Branches</a>
+          <a href="#promos" class="hover:opacity-100 hover:translate-x-1 transition">Promos & Packages</a>
+          <a href="#about" class="hover:opacity-100 hover:translate-x-1 transition">Our Story</a>
+          <a href="#faq" class="hover:opacity-100 hover:translate-x-1 transition">FAQs</a>
+        </div>
+      </div>
+      <div>
+        <div class="text-[11px] tracking-[0.18em] opacity-50 mb-6">BRANCHES</div>
+        <div class="flex flex-col gap-5 text-[13px] leading-5 opacity-80">
+          <div><div class="font-semibold text-cream">BGC — Forbes Town</div><div class="opacity-60 mt-1">2F Forbeswood Heights, Burgos Circle<br/>Open 2PM-12MN Daily</div></div>
+          <div><div class="font-semibold text-cream">Makati — Legazpi Village</div><div class="opacity-60 mt-1">G/F Greenbelt Mansions, Perea St<br/>Open 2PM-12MN Daily</div></div>
+          <div><div class="font-semibold text-cream">Pasay — Newport</div><div class="opacity-60 mt-1">2F 101 Newport Blvd, Pasay<br/>Open 2PM-12MN Daily</div></div>
+        </div>
+      </div>
+      <div class="bg-white/[0.06] rounded-[20px] p-6 border border-white/10">
+        <div class="text-[11px] tracking-[0.18em] opacity-50 mb-3">GET 10% OFF FIRST VISIT</div>
+        <div class="font-serif text-[22px] leading-[1.1]">Join our calm club for quiet perks.</div>
+        <div class="mt-4 flex gap-2">
+          <input id="newsletterEmail" placeholder="Your email" class="flex-1 h-11 rounded-full bg-white/10 border border-white/10 px-5 text-[13px] placeholder:text-white/40 outline-none focus:border-white/30"/>
+          <button onclick="toast('Joined! Check your inbox.')" class="h-11 px-6 rounded-full bg-cream text-forest text-[13px] font-semibold">Join</button>
+        </div>
+        <div class="mt-3 text-[11px] opacity-50 leading-4">No spam. Unsubscribe anytime. For PetersWeb SaaS template — this is pluggable.</div>
+      </div>
+    </div>
+    <div class="py-6 flex flex-col md:flex-row justify-between gap-3 text-[11px] tracking-[0.08em] opacity-50">
+      <div>© 2026 BREEZE MASSAGE PH • Crafted as PetersWeb SaaS Template • BUSINESS → BRANCHES → SERVICES → BOOKING → CRM → DASHBOARD</div>
+      <div class="flex gap-6"><span>Privacy</span><span>Terms</span><span>Sitemap</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Sticky Book -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-gradient-to-t from-cream via-cream to-transparent">
+  <a href="#booking" class="btn-pill bg-forest text-cream w-full h-[56px] grid place-items-center font-semibold shadow-[0_12px_30px_-10px_rgba(22,46,41,.6)]">BOOK NOW — From ₱550</a>
+</div>
+
+<div id="toastWrap" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"></div>
+
+<script>
+// ---------- PetersWeb SaaS Data Layer (DB-driven ready) ----------
+const DB = {
+  business:{
+    name:"BREEZE MASSAGE",
+    tagline:"Your Sanctuary in the City",
+    rating:4.9, reviews:2847, years:10, clients:50000
+  },
+  branches:[
+    {id:'bgc', slug:'bgc', name:'BGC — Forbes Town', short:'BGC', address:'2F Forbeswood Heights, Burgos Circle, Taguig', city:'Taguig', hours:'2PM - 12MN Daily', phone:'+63 917 111 0001', image:'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop', map:'Forbes Town Center', rooms:12, therapists:24, parking:true},
+    {id:'makati', slug:'makati', name:'Makati — Legazpi Village', short:'Makati', address:'G/F Greenbelt Mansions, Perea St, Legazpi Village', city:'Makati', hours:'2PM - 12MN Daily', phone:'+63 917 111 0002', image:'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop', map:'Legazpi Village', rooms:10, therapists:20, parking:false},
+    {id:'pasay', slug:'pasay', name:'Pasay — Newport', short:'Pasay', address:'2F 101 Newport Blvd, Newport City, Pasay', city:'Pasay', hours:'2PM - 12MN Daily', phone:'+63 917 111 0003', image:'https://images.unsplash.com/photo-1591343395082-e120087004b4?q=80&w=800&auto=format&fit=crop', map:'Newport City', rooms:14, therapists:28, parking:true},
+  ],
+  services:[
+    {id:'signature', slug:'breeze-signature', cat:'Signature', name:'Breeze Signature', duration:90, price:1299, orig:1599, desc:'Our house blend of Swedish + Shiatsu + stretching for full reset.', popular:true, image:'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=600&auto=format&fit=crop'},
+    {id:'swedish', slug:'swedish-relax', cat:'Classic', name:'Swedish Relaxation', duration:60, price:750, orig:null, desc:'Long, flowing strokes to melt tension and calm the nervous system.', popular:true, image:'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=600&auto=format&fit=crop'},
+    {id:'shiatsu', slug:'shiatsu-deep', cat:'Classic', name:'Shiatsu Deep Tissue', duration:90, price:1150, orig:null, desc:'Focused pressure along meridians to release knots and restore flow.', popular:false, image:'https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=600&auto=format&fit=crop'},
+    {id:'thai', slug:'thai-stretch', cat:'Traditional', name:'Thai Stretch & Compress', duration:90, price:1099, orig:null, desc:'Assisted stretching, compression, no oil — energizing and grounding.', popular:false, image:'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=600&auto=format&fit=crop'},
+    {id:'hotstone', slug:'hot-stone', cat:'Signature', name:'Hot Stone Ritual', duration:90, price:1499, orig:1799, desc:'Warm basalt stones + aromatherapy for deep muscle surrender.', popular:true, image:'https://images.unsplash.com/photo-1570172619644-dfd03ed1350b?q=80&w=600&auto=format&fit=crop'},
+    {id:'foot', slug:'foot-reflex', cat:'Add-ons', name:'Foot Reflexology', duration:60, price:650, orig:null, desc:'Pressure points for sleep, circulation and calm.', popular:false, image:'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop'},
+  ],
+  addons:[
+    {id:'aroma', name:'Aromatherapy Upgrade', price:150},
+    {id:'scalp', name:'Scalp & Head (15min)', price:200},
+    {id:'foot10', name:'Extra Foot (10min)', price:120},
+    {id:'hot Towel', name:'Hot Towel Compress', price:100},
+  ],
+  promos:[
+    {id:'first', title:'First Breeze 20% OFF', code:'BREEZE20', desc:'New guests get 20% off any 90-min service. Valid Mon-Thu.', image:'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop', valid:'Until Dec 2026'},
+    {id:'duo', title:'Duo Calm — Save ₱400', code:'DUO400', desc:'Book 2 x 90min together. Perfect for couples or friends.', image:'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop', valid:'Daily 2PM-6PM'},
+    {id:'five', title:'Buy 5 Get 1 Free', code:'BREEZE6', desc:'Loyalty card. Collect 5 visits, 6th is on us. Any branch.', image:'https://images.unsplash.com/photo-1596178060810-474c9574a5a3?q=80&w=800&auto=format&fit=crop', valid:'Ongoing'},
+  ],
+  testimonials:[
+    {name:'Andrea L.', branch:'BGC', text:'Quietest spa in BGC. Therapists remember my pressure preference. Booking online is actually easy.', rating:5, avatar:'https://i.pravatar.cc/100?img=32'},
+    {name:'Mark D.', branch:'Makati', text:'After work ritual. No hard selling, just excellent massage. The signature 90 is worth every peso.', rating:5, avatar:'https://i.pravatar.cc/100?img=12'},
+    {name:'Jasmine R.', branch:'Pasay', text:'Came from NAIA layover, left brand new. Newport branch is spotless and so calm.', rating:5, avatar:'https://i.pravatar.cc/100?img=26'},
+    {name:'Carlo S.', branch:'BGC', text:'Best hot stone in Manila. Not too hot, perfect flow. Reception is warm and professional.', rating:5, avatar:'https://i.pravatar.cc/100?img=8'},
+  ],
+  faqs:[
+    {q:'What are your hours?', a:'All branches are open daily 2PM to 12MN, including holidays. Last booking at 11PM for 60-min services.'},
+    {q:'Do I need to book in advance?', a:'Walk-ins are welcome but we highly recommend booking online. BGC and Makati are often full after 7PM.'},
+    {q:'What should I wear?', a:'We provide disposable undergarments, shorts and sanitized linens. You can stay in your own underwear if you prefer.'},
+    {q:'Are your therapists licensed?', a:'Yes, all therapists are NCII certified with 5+ years experience and monthly retraining. Female and male therapists available.'},
+    {q:'Cancellation policy?', a:'Free cancellation up to 2 hours before. Late cancellations are charged 50%. No-show will be noted in CRM for PetersWeb flow.'},
+    {q:'Do you offer home service?', a:'Not at the moment. We focus on in-branch sanctuary experience for hygiene and sound control.'},
+  ]
+};
+
+let bookingState = {
+  branchId: 'bgc',
+  serviceId: 'signature',
+  date: null,
+  time: null,
+  addons: [],
+  promo: '',
+  guest: {name:'', nationality:'Philippines', phone:'', email:'', notes:''},
+  step: 1
+};
+
+// ---------- Helpers ----------
+const $ = s=>document.querySelector(s);
+const $$ = s=>[...document.querySelectorAll(s)];
+const money = n=>'₱'+n.toLocaleString('en-PH');
+function toast(msg){
+  const el=document.createElement('div');
+  el.className='pointer-events-auto bg-forest text-cream text-[13px] px-5 py-3 rounded-full shadow-xl translate-y-4 opacity-0 transition-all';
+  el.textContent=msg;
+  $('#toastWrap').appendChild(el);
+  requestAnimationFrame(()=>{el.classList.remove('translate-y-4','opacity-0')});
+  setTimeout(()=>{el.classList.add('translate-y-4','opacity-0'); setTimeout(()=>el.remove(),400)},2600);
+}
+function getBookings(){try{return JSON.parse(localStorage.getItem('breeze_bookings')||'[]')}catch{return []}}
+function saveBooking(b){const all=getBookings(); all.unshift(b); localStorage.setItem('breeze_bookings', JSON.stringify(all.slice(0,200)))}
+
+// ---------- Router ----------
+function parseHash(){
+  const h=(location.hash||'#home').replace('#','');
+  const [path,qs]=h.split('?');
+  const params=new URLSearchParams(qs||'');
+  return {path: path||'home', params};
+}
+function navigate(to){location.hash=to; window.scrollTo({top:0,behavior:'smooth'})}
+
+function render(){
+  const {path,params}=parseHash();
+  const root=$('#appRoot');
+  root.style.opacity='0';
+  setTimeout(()=>{
+    if(path.startsWith('branch-')){ const slug=path.replace('branch-',''); root.innerHTML=BranchDetailPage(slug); }
+    else if(path.startsWith('service-')){ const slug=path.replace('service-',''); root.innerHTML=ServiceDetailPage(slug); }
+    else if(path==='branches') root.innerHTML=BranchesPage();
+    else if(path==='services') root.innerHTML=ServicesPage(params.get('cat')||'All');
+    else if(path==='promos') root.innerHTML=PromosPage();
+    else if(path==='about') root.innerHTML=AboutPage();
+    else if(path==='booking') root.innerHTML=BookingPage(params);
+    else if(path==='dashboard') root.innerHTML=DashboardPage();
+    else if(path==='faq') root.innerHTML=FAQPage();
+    else root.innerHTML=HomePage();
+    // active nav
+    $$('.nav-link').forEach(a=>{a.classList.toggle('active', a.getAttribute('href')==='#'+path || (path.startsWith('branch') && a.getAttribute('href')==='#branches') || (path.startsWith('service') && a.getAttribute('href')==='#services'))});
+    root.style.opacity='1';
+    initInteractions();
+  },120);
+}
+
+// ---------- Page Templates ----------
+function HomePage(){
+  return `
+  <!-- Hero -->
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10 lg:pt-16 pb-10">
+    <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-start">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 border border-line rounded-full px-3 py-1.5 bg-white">
+          <span class="w-5 h-5 rounded-full bg-forest text-cream grid place-items-center text-[10px]">★</span>
+          <span class="text-[11px] tracking-[0.14em] font-semibold">MANILA'S MOST LOVED • 4.9/5 FROM 2,847 REVIEWS</span>
+        </div>
+        <h1 class="font-serif text-[44px] md:text-[66px] lg:text-[82px] leading-[0.9] tracking-[-0.04em] mt-6">
+          Where Stress<br/>Ends and<br/><span class="italic font-[300]">Breeze Begins</span>
+        </h1>
+        <p class="mt-6 text-[17px] leading-7 opacity-70 max-w-[48ch]">A quiet, clean, professional massage sanctuary in BGC, Makati and Pasay. No hard selling. Just excellent touch, warm tea, and a true pause.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#booking" class="btn-pill bg-forest text-cream h-[52px] px-8 inline-flex items-center gap-3 font-semibold text-[14px] hover:bg-forest2">BOOK AN APPOINTMENT <span class="w-6 h-6 rounded-full bg-white/15 grid place-items-center">→</span></a>
+          <a href="#services" class="btn-pill border border-line bg-white h-[52px] px-7 inline-flex items-center font-semibold text-[14px] hover:bg-paper">EXPLORE SERVICES</a>
+        </div>
+        <div class="mt-10 grid grid-cols-3 gap-6 border-t border-line pt-8 max-w-[520px]">
+          <div><div class="font-serif text-[32px] leading-none">10+</div><div class="text-[11px] tracking-[0.12em] opacity-60 mt-1">YEARS OF CALM</div></div>
+          <div><div class="font-serif text-[32px] leading-none">50k+</div><div class="text-[11px] tracking-[0.12em] opacity-60 mt-1">HAPPY GUESTS</div></div>
+          <div><div class="font-serif text-[32px] leading-none">3</div><div class="text-[11px] tracking-[0.12em] opacity-60 mt-1">SANCTUARIES</div></div>
+        </div>
+        <div class="mt-8 flex items-center gap-4">
+          <div class="flex -space-x-2">${[32,12,26,8].map(i=>`<img src="https://i.pravatar.cc/80?img=${i}" class="w-9 h-9 rounded-full border-2 border-cream"/>`).join('')}</div>
+          <div class="text-[13px] leading-5"><span class="font-semibold">Trusted by regulars</span><br/><span class="opacity-60">Join 2,800+ five-star reviews</span></div>
+        </div>
+      </div>
+      <div class="relative reveal" style="transition-delay:.12s">
+        <div class="rounded-[32px] overflow-hidden aspect-[4/5] lg:aspect-[4/5.2] bg-paper relative">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-forest/30 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-[18px] p-4 flex items-center justify-between border border-white">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-forest text-cream grid place-items-center">◐</div><div><div class="text-[12px] font-semibold tracking-wide">TODAY'S AVAILABILITY</div><div class="text-[11px] opacity-60">BGC 4 slots • Makati 6 • Pasay 8</div></div></div>
+            <div class="w-8 h-8 rounded-full bg-forest text-cream grid place-items-center">→</div>
+          </div>
+        </div>
+        <div class="absolute -left-6 top-[18%] hidden lg:flex bg-white border border-line rounded-[16px] p-3 shadow-[0_16px_40px_-16px_rgba(0,0,0,.2)] items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=120&auto=format&fit=crop" class="w-12 h-12 rounded-[10px] object-cover"/>
+          <div class="pr-2"><div class="text-[11px] tracking-[0.12em] opacity-60">SIGNATURE</div><div class="font-serif text-[15px] leading-none mt-1">90min Reset • ₱1,299</div><div class="text-[11px] mt-1"><span class="text-amber-600">★ 4.9</span> <span class="opacity-60">(312)</span></div></div>
+        </div>
+        <div class="absolute -right-4 bottom-[18%] hidden lg:flex bg-forest text-cream rounded-[16px] p-4 shadow-xl">
+          <div class="text-[11px] tracking-[0.16em] opacity-60">EST. 2014</div><div class="font-serif text-[20px] mt-1 leading-none">Quiet Luxury,<br/>No Noise.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="border-y border-line bg-white">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-8 h-[64px] flex items-center justify-between overflow-x-auto no-scrollbar gap-8">
+      <div class="flex items-center gap-8 text-[11px] tracking-[0.18em] opacity-60 font-semibold whitespace-nowrap">
+        <span>FEATURED IN</span>
+        <span class="font-serif text-[18px] tracking-normal normal-case opacity-100 text-ink">Manila Bulletin • Spot.ph • Philstar • Preview • Esquire</span>
+      </div>
+      <div class="hidden md:flex items-center gap-3 text-[12px]"><span class="opacity-60">NCII CERTIFIED • DOT ACCREDITED • 100% CLEAN LINENS</span></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div>
+        <div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">SERVICES • 60-90-120 MIN</div>
+        <h2 class="font-serif text-[40px] lg:text-[56px] leading-[0.9] tracking-[-0.03em] mt-3">Touch that<br/><span class="italic font-light">actually helps.</span></h2>
+      </div>
+      <div class="max-w-[44ch] text-[15px] leading-6 opacity-70">Every service includes consultation, warm towel, ginger tea, and quiet room. No upsell pressure. Just choose your time and pressure.</div>
+    </div>
+    <div class="mt-8 flex gap-2 overflow-x-auto no-scrollbar reveal">
+      ${['All','Signature','Classic','Traditional','Add-ons'].map(c=>`<button onclick="navigate('#services?cat=${c}')" class="whitespace-nowrap h-10 px-5 rounded-full border ${c==='All'?'bg-forest text-cream border-forest':'bg-white border-line'} text-[12px] tracking-[0.12em] font-semibold">${c.toUpperCase()}</button>`).join('')}
+      <a href="#services" class="ml-auto hidden lg:inline-flex h-10 px-5 rounded-full border border-line bg-white text-[12px] tracking-[0.12em] font-semibold items-center">VIEW ALL →</a>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DB.services.map(s=>ServiceCard(s)).join('')}
+    </div>
+  </section>
+
+  <!-- Branches -->
+  <section class="bg-paper border-y border-line">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
+      <div class="flex items-end justify-between gap-6 reveal">
+        <h2 class="font-serif text-[40px] lg:text-[56px] leading-[0.9] tracking-[-0.03em]">Three quiet<br/>corners of the city.</h2>
+        <a href="#branches" class="hidden lg:inline-flex h-11 px-6 rounded-full bg-forest text-cream text-[13px] font-semibold items-center">EXPLORE BRANCHES →</a>
+      </div>
+      <div class="mt-10 grid lg:grid-cols-3 gap-6">
+        ${DB.branches.map(b=>BranchCard(b)).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
+    <div class="rounded-[28px] overflow-hidden bg-forest text-cream grid lg:grid-cols-[1.1fr_0.9fr] reveal">
+      <div class="p-8 lg:p-12">
+        <div class="inline-flex bg-cream text-forest text-[10px] tracking-[0.18em] font-bold px-3 py-1.5 rounded-full">LIMITED • THIS MONTH</div>
+        <h3 class="font-serif text-[36px] lg:text-[48px] leading-[0.9] tracking-[-0.03em] mt-5">First Breeze?<br/><span class="italic font-light text-clay">20% off your reset.</span></h3>
+        <p class="mt-4 opacity-70 text-[14px] leading-6 max-w-[40ch]">New guests get 20% off any 90-min service Mon-Thu. Use code BREEZE20 when booking online. Clean rooms, warm tea, no awkward upsells.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <div class="bg-white/10 border border-white/10 rounded-full px-4 h-10 inline-flex items-center gap-2 text-[12px]"><span class="opacity-60">CODE</span><span class="font-mono font-semibold tracking-widest">BREEZE20</span></div>
+          <div class="bg-white/10 border border-white/10 rounded-full px-4 h-10 inline-flex items-center text-[12px]">Valid until Dec 2026</div>
+        </div>
+        <div class="mt-8 flex gap-3">
+          <a href="#booking" class="btn-pill bg-cream text-forest h-12 px-7 inline-flex items-center font-semibold text-[13px]">CLAIM OFFER →</a>
+          <a href="#promos" class="btn-pill border border-white/20 h-12 px-7 inline-flex items-center font-semibold text-[13px]">ALL PROMOS</a>
+        </div>
+      </div>
+      <div class="relative min-h-[340px]">
+        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-forest via-forest/40 to-transparent lg:bg-gradient-to-l"></div>
+        <div class="absolute bottom-6 left-6 right-6 lg:left-auto lg:right-6 bg-cream text-forest rounded-[16px] p-4 max-w-[300px]">
+          <div class="text-[11px] tracking-[0.14em] opacity-60 font-semibold">WHAT GUESTS SAY</div>
+          <div class="font-serif text-[16px] leading-[1.2] mt-2">"Didn't know a massage could be this quiet and professional in Manila."</div>
+          <div class="text-[11px] opacity-60 mt-2">— Andrea, BGC regular</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pb-20">
+    <div class="flex items-center justify-between reveal">
+      <h3 class="font-serif text-[28px] lg:text-[36px] tracking-[-0.02em]">Loved for the quiet.</h3>
+      <div class="flex gap-2"><button id="testPrev" class="w-10 h-10 rounded-full border border-line bg-white grid place-items-center">←</button><button id="testNext" class="w-10 h-10 rounded-full border border-line bg-white grid place-items-center">→</button></div>
+    </div>
+    <div id="testTrack" class="mt-8 flex gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2">
+      ${DB.testimonials.map(t=>`
+        <div class="snap-start shrink-0 w-[320px] lg:w-[380px] bg-white border border-line rounded-[20px] p-6 card-hover">
+          <div class="flex items-center gap-3"><img src="${t.avatar}" class="w-10 h-10 rounded-full"/><div><div class="font-semibold text-[14px]">${t.name}</div><div class="text-[11px] opacity-60">${t.branch} • Verified guest</div></div><div class="ml-auto text-amber-600 text-[12px]">★★★★★</div></div>
+          <div class="font-serif text-[18px] leading-[1.3] mt-4">"${t.text}"</div>
+          <div class="mt-4 text-[11px] tracking-[0.12em] opacity-50">BOOKED: BREEZE SIGNATURE 90MIN</div>
+        </div>
+      `).join('')}
+    </div>
+  </section>
+
+  <!-- FAQ Preview -->
+  <section class="bg-white border-y border-line">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-8 py-20 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
+      <div class="reveal"><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">FAQ • GOOD TO KNOW</div><h3 class="font-serif text-[40px] leading-[0.9] tracking-[-0.03em] mt-4">Quiet answers<br/>to calm questions.</h3><a href="#faq" class="mt-6 inline-flex h-10 px-5 rounded-full border border-line bg-cream text-[12px] font-semibold tracking-[0.1em] items-center">VIEW ALL FAQS →</a></div>
+      <div class="divide-y divide-line border border-line rounded-[20px] bg-cream overflow-hidden reveal">
+        ${DB.faqs.slice(0,4).map((f,i)=>`
+          <details class="group p-6 open:bg-white transition" ${i===0?'open':''}>
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none"><span class="font-serif text-[18px] leading-[1.2]">${f.q}</span><span class="w-8 h-8 rounded-full border border-line grid place-items-center group-open:rotate-45 transition">+</span></summary>
+            <div class="mt-3 text-[14px] leading-6 opacity-70 max-w-[60ch]">${f.a}</div>
+          </details>
+        `).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 py-16">
+    <div class="rounded-[28px] border border-line bg-paper p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 reveal">
+      <div><div class="font-serif text-[32px] lg:text-[44px] leading-[0.9] tracking-[-0.03em]">Ready to unwind?<br/><span class="italic font-light">We'll keep it quiet.</span></div><div class="mt-3 text-[14px] opacity-60">3 branches • Open daily 2PM-12MN • Online booking takes 40 seconds</div></div>
+      <div class="flex gap-3"><a href="#booking" class="btn-pill bg-forest text-cream h-[52px] px-8 inline-flex items-center font-semibold">BOOK NOW</a><a href="#branches" class="btn-pill bg-white border border-line h-[52px] px-8 inline-flex items-center font-semibold">FIND A BRANCH</a></div>
+    </div>
+  </section>
+  `;
+}
+
+function ServiceCard(s){
+  return `
+  <div class="group bg-white border border-line rounded-[22px] overflow-hidden card-hover reveal">
+    <div class="aspect-[16/10] overflow-hidden bg-paper relative">
+      <img src="${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+      <div class="absolute top-3 left-3 flex gap-2">
+        ${s.popular?`<span class="bg-forest text-cream text-[10px] tracking-[0.12em] font-bold px-3 py-1 rounded-full">POPULAR</span>`:''}
+        <span class="bg-white/90 backdrop-blur border border-white text-[10px] tracking-[0.12em] font-bold px-3 py-1 rounded-full">${s.cat.toUpperCase()}</span>
+      </div>
+      <div class="absolute bottom-3 right-3 bg-white rounded-full px-3 py-1.5 text-[11px] font-semibold border border-line">${s.duration}MIN • ${money(s.price)}</div>
+    </div>
+    <div class="p-5">
+      <div class="flex items-start justify-between gap-4"><h4 class="font-serif text-[20px] leading-[1.1]">${s.name}</h4><span class="text-[12px] opacity-60">${s.duration}m</span></div>
+      <p class="mt-2 text-[13px] leading-5 opacity-70">${s.desc}</p>
+      <div class="mt-4 flex items-center justify-between">
+        <div class="flex items-baseline gap-2"><span class="font-serif text-[22px]">${money(s.price)}</span>${s.orig?`<span class="text-[12px] line-through opacity-40">${money(s.orig)}</span>`:''}</div>
+        <div class="flex gap-2">
+          <a href="#service-${s.slug}" class="w-9 h-9 rounded-full border border-line grid place-items-center hover:bg-cream transition">↗</a>
+          <a href="#booking?service=${s.id}" class="h-9 px-4 rounded-full bg-forest text-cream text-[12px] font-semibold inline-flex items-center">Book</a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function BranchCard(b){
+  return `
+  <div class="bg-white border border-line rounded-[24px] overflow-hidden card-hover reveal">
+    <div class="aspect-[16/10] overflow-hidden relative">
+      <img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover"/>
+      <div class="absolute top-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1.5 text-[11px] font-semibold border border-white flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>OPEN • ${b.hours}</div>
+    </div>
+    <div class="p-6">
+      <div class="flex items-start justify-between"><h4 class="font-serif text-[22px] leading-[0.95]">${b.name}</h4><span class="text-[11px] tracking-[0.12em] opacity-60 border border-line rounded-full px-2.5 py-1">${b.city.toUpperCase()}</span></div>
+      <div class="mt-3 text-[13px] leading-5 opacity-70">${b.address}</div>
+      <div class="mt-4 grid grid-cols-3 gap-3 text-[11px]">
+        <div class="bg-cream border border-line rounded-[12px] p-2.5 text-center"><div class="font-semibold">${b.rooms}</div><div class="opacity-60">Rooms</div></div>
+        <div class="bg-cream border border-line rounded-[12px] p-2.5 text-center"><div class="font-semibold">${b.therapists}</div><div class="opacity-60">Therapists</div></div>
+        <div class="bg-cream border border-line rounded-[12px] p-2.5 text-center"><div class="font-semibold">${b.parking?'Yes':'No'}</div><div class="opacity-60">Parking</div></div>
+      </div>
+      <div class="mt-5 flex gap-2">
+        <a href="#branch-${b.slug}" class="flex-1 h-11 rounded-full border border-line bg-cream grid place-items-center text-[13px] font-semibold">View Details</a>
+        <a href="#booking?branch=${b.id}" class="flex-1 h-11 rounded-full bg-forest text-cream grid place-items-center text-[13px] font-semibold">Book Here</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+function BranchesPage(){
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">BRANCHES • 3 SANCTUARIES</div><h1 class="font-serif text-[48px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-3">Find your<br/><span class="italic font-light">nearest quiet.</span></h1></div>
+      <div class="text-[14px] leading-6 opacity-70 max-w-[42ch]">All branches share the same training, linens, and quiet policy. Choose by location — the calm is identical.</div>
+    </div>
+    <div class="mt-10 grid lg:grid-cols-3 gap-6">
+      ${DB.branches.map(b=>BranchCard(b)).join('')}
+    </div>
+    <div class="mt-12 bg-white border border-line rounded-[24px] p-6 lg:p-8 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+      <div><h3 class="font-serif text-[28px] leading-[0.95]">Same sanctuary standards,<br/>every branch.</h3><div class="mt-6 grid grid-cols-2 gap-4 text-[13px] leading-5"><div class="flex gap-3"><span>✓</span><span>NCII certified therapists, monthly retraining</span></div><div class="flex gap-3"><span>✓</span><span>Fresh linens, disposable undergarments</span></div><div class="flex gap-3"><span>✓</span><span>No phone, no chatter policy in rooms</span></div><div class="flex gap-3"><span>✓</span><span>Ginger tea + warm towel after every session</span></div></div></div>
+      <div class="bg-paper border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.14em] opacity-60 font-semibold">HOURS & CONTACT</div><div class="mt-3 text-[14px] leading-6">Open Daily 2PM-12MN<br/>Last call 11PM (60min)<br/><br/>Central: +63 917 123 4567<br/>Email: hello@breezemassage.ph<br/><br/><a href="#booking" class="text-forest font-semibold underline">Book online — fastest</a></div></div>
+    </div>
+  </section>`;
+}
+
+function BranchDetailPage(slug){
+  const b=DB.branches.find(x=>x.slug===slug); if(!b) return BranchesPage();
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <a href="#branches" class="inline-flex items-center gap-2 text-[12px] tracking-[0.12em] font-semibold opacity-60 hover:opacity-100">← ALL BRANCHES</a>
+    <div class="mt-6 grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
+      <div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">${b.city.toUpperCase()} • ${b.map.toUpperCase()}</div><h1 class="font-serif text-[44px] lg:text-[60px] leading-[0.9] tracking-[-0.04em] mt-3">${b.name}</h1><div class="mt-4 text-[14px] leading-6 opacity-70">${b.address} • ${b.hours}</div>
+        <div class="mt-8 rounded-[24px] overflow-hidden aspect-[16/11] bg-paper"><img src="${b.image}" class="w-full h-full object-cover"/></div>
+        <div class="mt-6 grid grid-cols-3 gap-3">
+          ${[1,2,3].map(i=>`<div class="rounded-[16px] overflow-hidden aspect-[4/3] bg-paper"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=400&auto=format&fit=crop&ix=${i}" class="w-full h-full object-cover"/></div>`).join('')}
+        </div>
+      </div>
+      <div class="lg:sticky lg:top-[96px] h-fit">
+        <div class="bg-white border border-line rounded-[24px] p-6">
+          <h3 class="font-serif text-[22px]">Book at ${b.short}</h3>
+          <div class="mt-4 space-y-3 text-[13px]"><div class="flex justify-between border-b border-line pb-3"><span class="opacity-60">Address</span><span class="font-medium text-right max-w-[18ch]">${b.address}</span></div><div class="flex justify-between border-b border-line pb-3"><span class="opacity-60">Hours</span><span class="font-medium">${b.hours}</span></div><div class="flex justify-between"><span class="opacity-60">Phone</span><span class="font-medium">${b.phone}</span></div></div>
+          <a href="#booking?branch=${b.id}" class="mt-6 btn-pill bg-forest text-cream w-full h-[52px] grid place-items-center font-semibold">BOOK AT ${b.short.toUpperCase()} →</a>
+          <div class="mt-4 bg-cream border border-line rounded-[14px] p-3 text-[12px] leading-5 opacity-70">Parking: ${b.parking?'Available at building basement':'Street parking only. Grab recommended after 8PM.'} • ${b.rooms} private rooms • ${b.therapists} therapists</div>
+        </div>
+        <div class="mt-6 bg-paper border border-line rounded-[20px] p-5">
+          <div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">SERVICES HERE</div>
+          <div class="mt-3 flex flex-wrap gap-2">${DB.services.slice(0,4).map(s=>`<span class="px-3 py-1.5 rounded-full bg-white border border-line text-[11px]">${s.name}</span>`).join('')}</div>
+          <div class="mt-4 h-[160px] rounded-[14px] bg-white border border-dashed border-line grid place-items-center text-[12px] opacity-50">Map placeholder — ${b.map}<br/>Embed Google Maps via DB.branches[].mapUrl</div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function ServicesPage(activeCat){
+  const cats=['All','Signature','Classic','Traditional','Add-ons'];
+  const list=activeCat==='All'?DB.services:DB.services.filter(s=>s.cat===activeCat || (activeCat==='Add-ons'&&s.cat==='Add-ons'));
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">SERVICES • PRICING • DURATION</div><h1 class="font-serif text-[48px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-3">Touch, timed<br/><span class="italic font-light">to what you need.</span></h1></div>
+      <div class="flex gap-2 overflow-x-auto no-scrollbar">${cats.map(c=>`<a href="#services?cat=${c}" class="whitespace-nowrap h-10 px-5 rounded-full border text-[12px] tracking-[0.12em] font-semibold inline-flex items-center ${activeCat===c?'bg-forest text-cream border-forest':'bg-white border-line'}">${c.toUpperCase()}</a>`).join('')}</div>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">${list.map(s=>ServiceCard(s)).join('')}</div>
+    <div class="mt-16 bg-white border border-line rounded-[24px] p-8 grid lg:grid-cols-[1fr_1fr] gap-8">
+      <div><h3 class="font-serif text-[26px] leading-[1]">How pricing works in PetersWeb SaaS template</h3><p class="mt-3 text-[14px] leading-6 opacity-70">BUSINESS → BRANCHES → SERVICES → PRICING. Each branch can override price. In this template DB.services[].price is global, but you can add branchPricing map for multi-location pricing logic.</p></div>
+      <div class="bg-cream border border-line rounded-[16px] p-4 text-[12px] leading-5 font-mono"><div class="opacity-60">// Example DB shape</div>services: [{id, price, duration}]<br/>branchServices: {bgc: {signature: {price:1399}}}<br/>bookings: -> customer DB -> owner dashboard</div>
+    </div>
+  </section>`;
+}
+
+function ServiceDetailPage(slug){
+  const s=DB.services.find(x=>x.slug===slug); if(!s) return ServicesPage('All');
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <a href="#services" class="inline-flex items-center gap-2 text-[12px] tracking-[0.12em] font-semibold opacity-60 hover:opacity-100">← ALL SERVICES</a>
+    <div class="mt-6 grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
+      <div><div class="inline-flex gap-2"><span class="px-3 py-1 rounded-full bg-forest text-cream text-[10px] tracking-[0.14em] font-bold">${s.cat.toUpperCase()}</span><span class="px-3 py-1 rounded-full bg-white border border-line text-[10px] tracking-[0.14em] font-bold">${s.duration} MIN</span></div><h1 class="font-serif text-[48px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-4">${s.name}</h1><p class="mt-4 text-[16px] leading-7 opacity-70 max-w-[48ch]">${s.desc} Includes consultation, warm towel, ginger tea. Pressure adjustable. No hard selling.</p>
+        <div class="mt-8 rounded-[24px] overflow-hidden aspect-[16/11] bg-paper"><img src="${s.image}" class="w-full h-full object-cover"/></div>
+        <div class="mt-8 grid grid-cols-3 gap-4 text-[13px]"><div class="bg-white border border-line rounded-[14px] p-4"><div class="opacity-60 text-[11px] tracking-[0.12em]">DURATION</div><div class="font-serif text-[20px] mt-1">${s.duration} min</div></div><div class="bg-white border border-line rounded-[14px] p-4"><div class="opacity-60 text-[11px] tracking-[0.12em]">PRICE</div><div class="font-serif text-[20px] mt-1">${money(s.price)}</div></div><div class="bg-white border border-line rounded-[14px] p-4"><div class="opacity-60 text-[11px] tracking-[0.12em]">PRESSURE</div><div class="font-serif text-[20px] mt-1">Soft - Firm</div></div></div>
+      </div>
+      <div class="lg:sticky lg:top-[96px] h-fit">
+        <div class="bg-white border border-line rounded-[24px] p-6"><div class="flex items-baseline justify-between"><h3 class="font-serif text-[22px]">Book ${s.name}</h3><div class="font-serif text-[24px]">${money(s.price)}</div></div>
+          <div class="mt-4 text-[13px] leading-6 opacity-70">Choose branch, date and time. Add-ons available at checkout. Promo codes supported.</div>
+          <a href="#booking?service=${s.id}" class="mt-6 btn-pill bg-forest text-cream w-full h-[52px] grid place-items-center font-semibold">BOOK THIS SERVICE →</a>
+          <div class="mt-4 flex gap-2">${DB.addons.slice(0,3).map(a=>`<span class="text-[11px] px-3 py-1 rounded-full bg-cream border border-line">+ ${a.name}</span>`).join('')}</div>
+        </div>
+        <div class="mt-6 bg-paper border border-line rounded-[20px] p-5"><div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">AVAILABLE AT</div><div class="mt-3 space-y-2">${DB.branches.map(b=>`<div class="flex items-center justify-between bg-white border border-line rounded-full px-4 h-11 text-[13px]"><span>${b.name}</span><a href="#booking?branch=${b.id}&service=${s.id}" class="text-forest font-semibold">Book →</a></div>`).join('')}</div></div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function PromosPage(){
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="flex flex-wrap items-end justify-between gap-6"><div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">PROMOS • PACKAGES • LOYALTY</div><h1 class="font-serif text-[48px] lg:text-[64px] leading-[0.9] tracking-[-0.04em] mt-3">Calm that<br/><span class="italic font-light">costs less.</span></h1></div><div class="text-[14px] opacity-70 max-w-[38ch]">No membership traps. Just honest promos for regulars. Codes work online, auto-applied at booking.</div></div>
+    <div class="mt-10 grid lg:grid-cols-3 gap-6">
+      ${DB.promos.map(p=>`
+        <div class="bg-white border border-line rounded-[24px] overflow-hidden card-hover">
+          <div class="aspect-[16/10] overflow-hidden relative"><img src="${p.image}" class="w-full h-full object-cover"/><div class="absolute top-3 left-3 bg-cream text-forest text-[10px] tracking-[0.14em] font-bold px-3 py-1.5 rounded-full">${p.valid}</div></div>
+          <div class="p-6"><h3 class="font-serif text-[22px] leading-[1]">${p.title}</h3><p class="mt-2 text-[13px] leading-5 opacity-70">${p.desc}</p><div class="mt-4 flex items-center justify-between"><div class="bg-cream border border-line rounded-full px-4 h-10 inline-flex items-center gap-2 text-[12px]"><span class="opacity-60">CODE</span><span class="font-mono font-semibold tracking-widest">${p.code}</span></div><a href="#booking?promo=${p.code}" class="h-10 px-5 rounded-full bg-forest text-cream text-[12px] font-semibold inline-flex items-center">Use Code</a></div></div>
+        </div>
+      `).join('')}
+    </div>
+  </section>`;
+}
+
+function AboutPage(){
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
+      <div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">ABOUT • SINCE 2014</div><h1 class="font-serif text-[48px] lg:text-[72px] leading-[0.85] tracking-[-0.04em] mt-4">We built a<br/>sanctuary, not<br/><span class="italic font-light">a spa factory.</span></h1><p class="mt-6 text-[16px] leading-7 opacity-70 max-w-[48ch]">Breeze started with one quiet room in Makati. No loud music, no sales talk, no shortcuts. 10 years later, same promise: excellent touch, clean space, warm people.</p>
+        <div class="mt-10 grid grid-cols-3 gap-6 border-t border-line pt-8 max-w-[520px]"><div><div class="font-serif text-[32px]">10+</div><div class="text-[11px] tracking-[0.12em] opacity-60">YEARS</div></div><div><div class="font-serif text-[32px]">3</div><div class="text-[11px] tracking-[0.12em] opacity-60">BRANCHES</div></div><div><div class="font-serif text-[32px]">100%</div><div class="text-[11px] tracking-[0.12em] opacity-60">NCII TEAM</div></div></div>
+      </div>
+      <div class="rounded-[28px] overflow-hidden aspect-[4/5] bg-paper"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover"/></div>
+    </div>
+    <div class="mt-16 grid lg:grid-cols-3 gap-6">
+      ${[{t:'Quiet Policy',d:'No phones, no chatter in halls. Rooms are soundproofed. We protect your pause.'},{t:'Clean Obsession',d:'Fresh linens every guest, sanitized stones, daily deep clean. DOT inspected.'},{t:'No Upsell',d:'We don’t sell packages you don’t need. Just book what feels right.'}].map(c=>`<div class="bg-white border border-line rounded-[20px] p-6"><div class="w-10 h-10 rounded-full bg-cream border border-line grid place-items-center">◍</div><h4 class="font-serif text-[20px] mt-4">${c.t}</h4><p class="mt-2 text-[13px] leading-5 opacity-70">${c.d}</p></div>`).join('')}
+    </div>
+  </section>`;
+}
+
+function FAQPage(){
+  return `
+  <section class="max-w-[900px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="text-center"><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">FAQ</div><h1 class="font-serif text-[48px] leading-[0.9] tracking-[-0.04em] mt-3">Everything you<br/><span class="italic font-light">need to know.</span></h1></div>
+    <div class="mt-10 divide-y divide-line border border-line rounded-[20px] bg-white overflow-hidden">
+      ${DB.faqs.map((f,i)=>`<details class="group p-6 open:bg-cream" ${i<2?'open':''}><summary class="flex justify-between gap-6 cursor-pointer list-none font-serif text-[18px]">${f.q}<span class="w-8 h-8 rounded-full border border-line grid place-items-center group-open:rotate-45 transition">+</span></summary><div class="mt-3 text-[14px] leading-6 opacity-70">${f.a}</div></details>`).join('')}
+    </div>
+  </section>`;
+}
+
+// ---------- Booking Page ----------
+function BookingPage(params){
+  const preBranch=params.get('branch'); if(preBranch) bookingState.branchId=preBranch;
+  const preService=params.get('service'); if(preService) bookingState.serviceId=preService;
+  const prePromo=params.get('promo'); if(prePromo) bookingState.promo=prePromo;
+  const service=DB.services.find(s=>s.id===bookingState.serviceId)||DB.services[0];
+  const branch=DB.branches.find(b=>b.id===bookingState.branchId)||DB.branches[0];
+  const dates=Array.from({length:14},(_,i)=>{const d=new Date(); d.setDate(d.getDate()+i); return d});
+  const times=[]; for(let h=14;h<24;h++){times.push(`${h.toString().padStart(2,'0')}:00`); times.push(`${h.toString().padStart(2,'0')}:30`)} times.pop();
+  const total = service.price + bookingState.addons.reduce((s,id)=>s+(DB.addons.find(a=>a.id===id)?.price||0),0);
+  const discount = bookingState.promo==='BREEZE20'?Math.round(total*0.2): bookingState.promo==='DUO400'?400:0;
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">BOOKING • 40 SECONDS</div><h1 class="font-serif text-[42px] lg:text-[56px] leading-[0.9] tracking-[-0.04em] mt-3">Book your<br/><span class="italic font-light">breeze.</span></h1></div>
+      <div class="flex items-center gap-2 text-[11px] tracking-[0.12em] font-semibold">
+        ${[1,2,3,4].map(n=>`<div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full grid place-items-center border ${bookingState.step===n?'bg-forest text-cream border-forest':'bg-white border-line'}">${n}</span><span class="${bookingState.step===n?'':'opacity-40'}">${['SERVICE','TIME','DETAILS','CONFIRM'][n-1]}</span>${n<4?'<span class="w-6 h-[1px] bg-line mx-1"></span>':''}</div>`).join('')}
+      </div>
+    </div>
+
+    <div class="mt-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+      <!-- Left -->
+      <div class="bg-white border border-line rounded-[24px] p-6 lg:p-8">
+        <!-- Step 1 -->
+        <div class="${bookingState.step!==1?'hidden':''}" id="step1">
+          <h3 class="font-serif text-[24px]">Choose branch & service</h3>
+          <div class="mt-6"><div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">BRANCH</div><div class="mt-3 grid md:grid-cols-3 gap-3">${DB.branches.map(b=>`<button onclick="setBooking({branchId:'${b.id}'})" class="text-left border rounded-[16px] p-4 ${bookingState.branchId===b.id?'bg-forest text-cream border-forest':'bg-cream border-line'}"><div class="font-semibold text-[14px]">${b.short}</div><div class="text-[11px] opacity-70 mt-1 leading-4">${b.address.slice(0,32)}...</div></button>`).join('')}</div></div>
+          <div class="mt-8"><div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">SERVICE</div><div class="mt-3 grid gap-3">${DB.services.map(s=>`<button onclick="setBooking({serviceId:'${s.id}'})" class="text-left flex items-center gap-4 border rounded-[16px] p-4 ${bookingState.serviceId===s.id?'bg-forest text-cream border-forest':'bg-white border-line'}"><img src="${s.image}" class="w-14 h-14 rounded-[12px] object-cover"/><div class="flex-1"><div class="font-semibold text-[14px]">${s.name} • ${s.duration}min</div><div class="text-[12px] opacity-70">${s.desc.slice(0,56)}...</div></div><div class="font-serif text-[18px]">${money(s.price)}</div></button>`).join('')}</div></div>
+          <button onclick="setBooking({step:2})" class="mt-8 btn-pill bg-forest text-cream w-full h-[52px] font-semibold">Continue to Date & Time →</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="${bookingState.step!==2?'hidden':''}" id="step2">
+          <h3 class="font-serif text-[24px]">Pick date & time</h3>
+          <div class="mt-6"><div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">DATE • NEXT 14 DAYS</div><div class="mt-3 grid grid-cols-4 md:grid-cols-7 gap-2">${dates.map(d=>{const active=bookingState.date===d.toDateString(); return `<button onclick="setBooking({date:'${d.toDateString()}'})" class="rounded-[14px] border p-3 text-center ${active?'bg-forest text-cream border-forest':'bg-cream border-line'}"><div class="text-[10px] tracking-[0.12em] opacity-70">${d.toLocaleDateString('en-US',{weekday:'short'}).toUpperCase()}</div><div class="font-serif text-[20px] leading-none mt-1">${d.getDate()}</div><div class="text-[10px] mt-1 opacity-60">${d.toLocaleDateString('en-US',{month:'short'})}</div></button>`}).join('')}</div></div>
+          <div class="mt-8"><div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">TIME • 2PM - 12MN</div><div class="mt-3 grid grid-cols-3 md:grid-cols-4 gap-2">${times.map(t=>`<button onclick="setBooking({time:'${t}'})" class="slot rounded-full h-10 text-[13px] font-medium ${bookingState.time===t?'active':''}">${t}</button>`).join('')}</div></div>
+          <div class="mt-8 flex gap-3"><button onclick="setBooking({step:1})" class="flex-1 h-[52px] rounded-full border border-line bg-white font-semibold">Back</button><button onclick="setBooking({step:3})" class="flex-[1.4] btn-pill bg-forest text-cream h-[52px] font-semibold">Continue →</button></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="${bookingState.step!==3?'hidden':''}" id="step3">
+          <h3 class="font-serif text-[24px]">Your details</h3>
+          <div class="mt-6 grid md:grid-cols-2 gap-4">
+            <label class="text-[11px] tracking-[0.12em] font-semibold">GUEST NAME<input id="gName" value="${bookingState.guest.name}" placeholder="Juan Dela Cruz" class="mt-2 w-full h-12 rounded-full border border-line bg-cream px-5 text-[14px] outline-none focus:border-forest"/></label>
+            <label class="text-[11px] tracking-[0.12em] font-semibold">NATIONALITY<select id="gNation" class="mt-2 w-full h-12 rounded-full border border-line bg-cream px-5 text-[14px]"><option>Philippines</option><option>United States</option><option>Japan</option><option>Korea</option><option>Other</option></select></label>
+            <label class="text-[11px] tracking-[0.12em] font-semibold">CONTACT NUMBER<input id="gPhone" value="${bookingState.guest.phone}" placeholder="+63 9XX XXX XXXX" class="mt-2 w-full h-12 rounded-full border border-line bg-cream px-5 text-[14px] outline-none focus:border-forest"/></label>
+            <label class="text-[11px] tracking-[0.12em] font-semibold">EMAIL<input id="gEmail" value="${bookingState.guest.email}" placeholder="you@email.com" class="mt-2 w-full h-12 rounded-full border border-line bg-cream px-5 text-[14px] outline-none focus:border-forest"/></label>
+          </div>
+          <div class="mt-6"><div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">ADD-ONS</div><div class="mt-3 grid md:grid-cols-2 gap-2">${DB.addons.map(a=>`<label class="flex items-center justify-between border rounded-full px-4 h-12 cursor-pointer ${bookingState.addons.includes(a.id)?'bg-forest text-cream border-forest':'bg-white border-line'}"><span class="flex items-center gap-3"><input type="checkbox" ${bookingState.addons.includes(a.id)?'checked':''} onchange="toggleAddon('${a.id}')" class="accent-forest"/>${a.name}</span><span class="font-medium">+${money(a.price)}</span></label>`).join('')}</div></div>
+          <div class="mt-6 grid md:grid-cols-[1fr_1fr] gap-4">
+            <label class="text-[11px] tracking-[0.12em] font-semibold">PROMO CODE<div class="mt-2 flex gap-2"><input id="promoInput" value="${bookingState.promo}" placeholder="BREEZE20" class="flex-1 h-12 rounded-full border border-line bg-cream px-5 text-[14px] outline-none focus:border-forest"/><button onclick="applyPromo()" class="h-12 px-5 rounded-full bg-forest text-cream text-[12px] font-semibold">Apply</button></div></label>
+            <label class="text-[11px] tracking-[0.12em] font-semibold">NOTES<textarea id="gNotes" placeholder="Pressure preference, allergies, etc." class="mt-2 w-full h-12 rounded-[18px] border border-line bg-cream px-5 py-3 text-[14px] outline-none focus:border-forest resize-none"></textarea></label>
+          </div>
+          <div class="mt-8 flex gap-3"><button onclick="setBooking({step:2})" class="flex-1 h-[52px] rounded-full border border-line bg-white font-semibold">Back</button><button onclick="setBooking({step:4, guest:{name:$('#gName').value, nationality:$('#gNation').value, phone:$('#gPhone').value, email:$('#gEmail').value, notes:$('#gNotes').value}})" class="flex-[1.4] btn-pill bg-forest text-cream h-[52px] font-semibold">Review & Confirm →</button></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="${bookingState.step!==4?'hidden':''}" id="step4">
+          <h3 class="font-serif text-[24px]">Confirm booking</h3>
+          <div class="mt-6 bg-cream border border-line rounded-[18px] p-5 text-[13px] leading-6">
+            <div class="flex justify-between"><span class="opacity-60">Branch</span><span class="font-semibold">${branch.name}</span></div>
+            <div class="flex justify-between mt-2"><span class="opacity-60">Service</span><span class="font-semibold">${service.name} • ${service.duration}min</span></div>
+            <div class="flex justify-between mt-2"><span class="opacity-60">When</span><span class="font-semibold">${bookingState.date||'—'} at ${bookingState.time||'—'}</span></div>
+            <div class="flex justify-between mt-2"><span class="opacity-60">Guest</span><span class="font-semibold">${bookingState.guest.name||'—'} • ${bookingState.guest.phone||''}</span></div>
+            <div class="border-t border-line mt-4 pt-4 flex justify-between font-serif text-[18px]"><span>Total</span><span>${money(total-discount)} ${discount?`<span class="text-[12px] opacity-60 line-through ml-2">${money(total)}</span>`:''}</span></div>
+          </div>
+          <div class="mt-4 text-[11px] leading-4 opacity-60">By confirming, you agree to free cancellation up to 2 hours before. This is a PetersWeb template — no real payment is charged. Data saved to localStorage as CRM mock.</div>
+          <div class="mt-6 flex gap-3"><button onclick="setBooking({step:3})" class="flex-1 h-[52px] rounded-full border border-line bg-white font-semibold">Back</button><button onclick="submitBooking()" class="flex-[1.4] btn-pill bg-forest text-cream h-[52px] font-semibold">CONFIRM BOOKING →</button></div>
+        </div>
+      </div>
+
+      <!-- Right Summary -->
+      <div class="lg:sticky lg:top-[96px] space-y-4">
+        <div class="bg-forest text-cream rounded-[24px] p-6">
+          <div class="text-[11px] tracking-[0.18em] opacity-60">SUMMARY</div>
+          <div class="mt-4 flex gap-4"><img src="${service.image}" class="w-20 h-20 rounded-[14px] object-cover"/><div><div class="font-serif text-[20px] leading-[1]">${service.name}</div><div class="text-[12px] opacity-70 mt-2">${service.duration}min • ${branch.short} • ${bookingState.date?bookingState.date.slice(0,10):'Pick date'}</div><div class="mt-2 inline-flex bg-white/10 border border-white/10 rounded-full px-3 py-1 text-[11px]">${bookingState.time||'Pick time'}</div></div></div>
+          <div class="mt-6 border-t border-white/10 pt-4 space-y-2 text-[13px]"><div class="flex justify-between opacity-80"><span>Service</span><span>${money(service.price)}</span></div><div class="flex justify-between opacity-80"><span>Add-ons (${bookingState.addons.length})</span><span>${money(bookingState.addons.reduce((s,id)=>s+(DB.addons.find(a=>a.id===id)?.price||0),0))}</span></div>${discount?`<div class="flex justify-between text-clay"><span>Promo ${bookingState.promo}</span><span>-${money(discount)}</span></div>`:''}<div class="flex justify-between font-semibold text-[16px] pt-2 border-t border-white/10"><span>Total</span><span>${money(total-discount)}</span></div></div>
+          <div class="mt-4 text-[11px] opacity-60 leading-4">Secure booking • No card required • Pay at branch. PetersWeb SaaS ready: connect to Stripe / PayMongo via API.</div>
+        </div>
+        <div class="bg-white border border-line rounded-[20px] p-5">
+          <div class="text-[11px] tracking-[0.14em] font-semibold opacity-60">WHY BOOK ONLINE?</div>
+          <div class="mt-3 space-y-2 text-[12px] leading-5 opacity-70"><div>✓ Instant confirmation + SMS</div><div>✓ Choose therapist gender preference</div><div>✓ Promo codes auto-applied</div><div>✓ CRM → Owner dashboard (see #dashboard)</div></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function DashboardPage(){
+  const bookings=getBookings();
+  const revenue=bookings.reduce((s,b)=>s+b.total,0);
+  return `
+  <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
+    <div class="flex items-end justify-between gap-6"><div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">PETERSWEB SAAS • OWNER DASHBOARD</div><h1 class="font-serif text-[40px] leading-[0.9] tracking-[-0.04em] mt-3">Business → Branches → Services → Booking → CRM → Dashboard</h1></div><a href="#booking" class="hidden lg:inline-flex h-11 px-6 rounded-full bg-forest text-cream text-[13px] font-semibold items-center">+ New Booking</a></div>
+    <div class="mt-8 grid md:grid-cols-4 gap-4">
+      <div class="bg-white border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.12em] opacity-60">TOTAL BOOKINGS</div><div class="font-serif text-[32px] mt-2">${bookings.length}</div><div class="text-[11px] opacity-60 mt-1">Mock localStorage CRM</div></div>
+      <div class="bg-white border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.12em] opacity-60">EST. REVENUE</div><div class="font-serif text-[32px] mt-2">${money(revenue)}</div><div class="text-[11px] opacity-60 mt-1">From mock bookings</div></div>
+      <div class="bg-white border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.12em] opacity-60">BRANCHES</div><div class="font-serif text-[32px] mt-2">${DB.branches.length}</div><div class="text-[11px] opacity-60 mt-1">${DB.branches.map(b=>b.short).join(' • ')}</div></div>
+      <div class="bg-white border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.12em] opacity-60">SERVICES</div><div class="font-serif text-[32px] mt-2">${DB.services.length}</div><div class="text-[11px] opacity-60 mt-1">DB-driven template</div></div>
+    </div>
+    <div class="mt-8 bg-white border border-line rounded-[20px] overflow-hidden">
+      <div class="p-5 border-b border-line flex items-center justify-between"><h3 class="font-serif text-[20px]">Recent Bookings (CRM)</h3><button onclick="localStorage.removeItem('breeze_bookings'); render();" class="text-[11px] tracking-[0.12em] font-semibold opacity-60 hover:opacity-100">CLEAR MOCK DATA</button></div>
+      <div class="overflow-x-auto"><table class="w-full text-[13px]"><thead class="bg-cream text-[11px] tracking-[0.12em] opacity-60"><tr><th class="text-left p-4">Guest</th><th class="text-left p-4">Branch • Service</th><th class="text-left p-4">When</th><th class="text-left p-4">Total</th><th class="text-left p-4">Status</th></tr></thead><tbody class="divide-y divide-line">${bookings.length?bookings.map(b=>`<tr><td class="p-4"><div class="font-semibold">${b.guest.name}</div><div class="opacity-60 text-[11px]">${b.guest.phone} • ${b.guest.email}</div></td><td class="p-4">${b.branchName} • ${b.serviceName}</td><td class="p-4">${b.date} ${b.time}</td><td class="p-4 font-semibold">${money(b.total)}</td><td class="p-4"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px]">${b.status}</span></td></tr>`).join(''):`<tr><td colspan="5" class="p-12 text-center opacity-60">No bookings yet. Create one at #booking — this simulates CUSTOMER DATABASE ↓ OWNER DASHBOARD flow for PetersWeb SaaS.</td></tr>`}</tbody></table></div>
+    </div>
+    <div class="mt-8 bg-paper border border-line rounded-[20px] p-6 text-[12px] leading-5 opacity-70">Template architecture: BUSINESS object → BRANCHES array → SERVICES array → PRICING overrides → BOOKING state → localStorage CRM → DASHBOARD analytics. Replace localStorage with Supabase/Firebase/REST API to make production-ready for any appointment business: massage, dental, salon, clinic, resort.</div>
+  </section>`;
+}
+
+// ---------- Interactions ----------
+function initInteractions(){
+  $$('.reveal').forEach(el=>{
+    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target)}})},{threshold:.12});
+    io.observe(el);
+  });
+  const track=$('#testTrack');
+  if(track){
+    $('#testPrev')?.addEventListener('click',()=>track.scrollBy({left:-380,behavior:'smooth'}));
+    $('#testNext')?.addEventListener('click',()=>track.scrollBy({left:380,behavior:'smooth'}));
+  }
+}
+
+function setBooking(upd){
+  if(upd.guest) bookingState.guest={...bookingState.guest, ...upd.guest};
+  bookingState={...bookingState, ...upd};
+  if(upd.branchId||upd.serviceId||upd.date||upd.time||upd.step!==undefined||upd.addons!==undefined) render();
+}
+function toggleAddon(id){
+  const set=new Set(bookingState.addons);
+  if(set.has(id)) set.delete(id); else set.add(id);
+  bookingState.addons=[...set];
+  render();
+}
+function applyPromo(){
+  const v=$('#promoInput').value.trim().toUpperCase();
+  bookingState.promo=v;
+  toast(v?`Promo ${v} applied`:'Promo cleared');
+  render();
+}
+function submitBooking(){
+  const service=DB.services.find(s=>s.id===bookingState.serviceId);
+  const branch=DB.branches.find(b=>b.id===bookingState.branchId);
+  const total=service.price + bookingState.addons.reduce((s,id)=>s+(DB.addons.find(a=>a.id===id)?.price||0),0);
+  const discount=bookingState.promo==='BREEZE20'?Math.round(total*0.2): bookingState.promo==='DUO400'?400:0;
+  if(!bookingState.guest.name || !bookingState.guest.phone){ toast('Please add name & phone'); setBooking({step:3}); return; }
+  if(!bookingState.date || !bookingState.time){ toast('Pick date & time'); setBooking({step:2}); return; }
+  const record={
+    id:'B'+Date.now().toString().slice(-6),
+    branchId:branch.id, branchName:branch.name,
+    serviceId:service.id, serviceName:service.name,
+    date:bookingState.date, time:bookingState.time,
+    guest:{...bookingState.guest},
+    addons:[...bookingState.addons],
+    promo:bookingState.promo,
+    total: total-discount,
+    status:'Confirmed',
+    createdAt:new Date().toISOString()
+  };
+  saveBooking(record);
+  toast('Booking confirmed! See #dashboard');
+  bookingState.step=1;
+  // success view
+  $('#appRoot').innerHTML=`
+  <section class="max-w-[720px] mx-auto px-6 lg:px-8 pt-20 text-center">
+    <div class="w-16 h-16 rounded-full bg-forest text-cream mx-auto grid place-items-center text-2xl">✓</div>
+    <h1 class="font-serif text-[48px] leading-[0.9] tracking-[-0.04em] mt-6">You're booked.<br/><span class="italic font-light">See you at ${branch.short}.</span></h1>
+    <div class="mt-6 bg-white border border-line rounded-[20px] p-6 text-left text-[13px] leading-6">
+      <div class="flex justify-between"><span class="opacity-60">Booking ID</span><span class="font-mono font-semibold">${record.id}</span></div>
+      <div class="flex justify-between mt-2"><span class="opacity-60">Branch</span><span class="font-semibold">${branch.name}</span></div>
+      <div class="flex justify-between mt-2"><span class="opacity-60">Service</span><span class="font-semibold">${service.name} • ${service.duration}min</span></div>
+      <div class="flex justify-between mt-2"><span class="opacity-60">When</span><span class="font-semibold">${record.date} at ${record.time}</span></div>
+      <div class="flex justify-between mt-4 pt-4 border-t border-line font-serif text-[20px]"><span>Total</span><span>${money(record.total)}</span></div>
+    </div>
+    <div class="mt-8 flex gap-3 justify-center"><a href="#dashboard" class="btn-pill bg-forest text-cream h-12 px-8 inline-flex items-center font-semibold">View in Dashboard</a><a href="#home" class="btn-pill border border-line bg-white h-12 px-8 inline-flex items-center font-semibold">Back Home</a></div>
+    <div class="mt-6 text-[11px] opacity-60">SMS confirmation mocked. In production, connect to Twilio / Semaphore API via PetersWeb backend.</div>
+  </section>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Mobile drawer
+$('#mobileToggle')?.addEventListener('click',()=>{$('#mobileDrawer').classList.remove('translate-x-full')});
+$('#drawerClose')?.addEventListener('click',()=>{$('#mobileDrawer').classList.add('translate-x-full')});
+$('#drawerBackdrop')?.addEventListener('click',()=>{$('#mobileDrawer').classList.add('translate-x-full')});
+$$('.mobile-link').forEach(a=>a.addEventListener('click',()=>{$('#mobileDrawer').classList.add('translate-x-full')}));
+
+// Header shadow
+window.addEventListener('scroll',()=>{$('#header').classList.toggle('shadow-[0_8px_30px_-16px_rgba(0,0,0,.15)]', window.scrollY>8)});
+
+// Router listeners
+window.addEventListener('hashchange', render);
+window.addEventListener('DOMContentLoaded', render);
+</script>
+</body>
+</html>
