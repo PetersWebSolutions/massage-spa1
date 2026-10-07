@@ -177,7 +177,7 @@ body{background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',sa
 </footer>
 
 <!-- Mobile Sticky Book -->
-<div class="lg:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-gradient-to-t from-cream via-cream to-transparent">
+<div id="stickyBook" class="lg:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-gradient-to-t from-cream via-cream to-transparent">
   <a href="#booking" onclick="startBooking()" class="btn-pill bg-forest text-cream w-full h-[56px] grid place-items-center font-semibold shadow-[0_12px_30px_-10px_rgba(22,46,41,.6)]">BOOK NOW</a>
 </div>
 
@@ -298,6 +298,8 @@ function render(){
     else root.innerHTML=HomePage();
     // active nav
     $$('.nav-link').forEach(a=>{a.classList.toggle('active', a.getAttribute('href')==='#'+path || (path.startsWith('branch') && a.getAttribute('href')==='#branches') || (path.startsWith('service') && a.getAttribute('href')==='#services'))});
+    // no "BOOK NOW" sticky bar on the booking flow itself — you are already there
+    $('#stickyBook')?.classList.toggle('hidden', path==='booking');
     root.style.opacity='1';
     initInteractions();
     // a hash link to a non-existent anchor does not scroll the browser, so
