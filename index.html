@@ -91,7 +91,7 @@ body{background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',sa
     </nav>
     <div class="flex items-center gap-3">
       <a href="#dashboard" class="hidden md:inline-flex text-[11px] tracking-[0.12em] font-semibold opacity-60 hover:opacity-100 transition">OWNER</a>
-      <a href="#booking" class="btn-pill hidden lg:inline-flex bg-forest text-cream px-7 h-[42px] items-center text-[13px] tracking-[0.06em] font-semibold hover:bg-forest2">BOOK NOW</a>
+      <a href="#booking" onclick="startBooking()" class="btn-pill hidden lg:inline-flex bg-forest text-cream px-7 h-[42px] items-center text-[13px] tracking-[0.06em] font-semibold hover:bg-forest2">BOOK NOW</a>
       <button id="mobileToggle" class="lg:hidden w-11 h-11 rounded-full border border-line grid place-items-center bg-card">
         <span class="w-5 h-[1.5px] bg-ink block relative before:content-[''] before:absolute before:w-5 before:h-[1.5px] before:bg-ink before:-top-1.5 after:content-[''] after:absolute after:w-5 after:h-[1.5px] after:bg-ink after:top-1.5"></span>
       </button>
@@ -116,7 +116,7 @@ body{background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',sa
       <a href="#faq" class="mobile-link flex justify-between">FAQ <span class="opacity-30">06</span></a>
     </div>
     <div class="mt-auto p-6 border-t border-line">
-      <a href="#booking" class="btn-pill bg-forest text-cream w-full h-[54px] grid place-items-center font-semibold tracking-wide">BOOK AN APPOINTMENT</a>
+      <a href="#booking" onclick="startBooking()" class="btn-pill bg-forest text-cream w-full h-[54px] grid place-items-center font-semibold tracking-wide">BOOK AN APPOINTMENT</a>
       <div class="mt-4 text-[11px] leading-5 opacity-60 text-center">Open Daily 2PM-12MN • BGC • Makati • Pasay<br/>+63 917 123 4567</div>
     </div>
   </div>
@@ -178,7 +178,7 @@ body{background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',sa
 
 <!-- Mobile Sticky Book -->
 <div class="lg:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-gradient-to-t from-cream via-cream to-transparent">
-  <a href="#booking" class="btn-pill bg-forest text-cream w-full h-[56px] grid place-items-center font-semibold shadow-[0_12px_30px_-10px_rgba(22,46,41,.6)]">BOOK NOW</a>
+  <a href="#booking" onclick="startBooking()" class="btn-pill bg-forest text-cream w-full h-[56px] grid place-items-center font-semibold shadow-[0_12px_30px_-10px_rgba(22,46,41,.6)]">BOOK NOW</a>
 </div>
 
 <div id="toastWrap" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"></div>
@@ -266,9 +266,24 @@ function parseHash(){
 }
 function navigate(to){location.hash=to; window.scrollTo({top:0,behavior:'smooth'})}
 
+// Entry points into the booking flow (BOOK NOW, BOOK AN APPOINTMENT, CLAIM OFFER…)
+// must always land on step 1 — "Choose branch & service". Without this the
+// previously visited step is restored, and clicking the link while already on
+// #booking does nothing at all (the hash does not change, so no render fires).
+function startBooking(){
+  bookingState.step=1;
+  if(parseHash().path==='booking'){ render(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else location.hash='#booking';
+}
+
+let lastRenderPath=null;
 function render(){
   const {path,params}=parseHash();
   const root=$('#appRoot');
+  const pathChanged = path!==lastRenderPath;
+  lastRenderPath=path;
+  // deep links such as #booking?branch=makati pre-select, but still open on step 1
+  if(path==='booking' && pathChanged) bookingState.step=1;
   root.style.opacity='0';
   setTimeout(()=>{
     if(path.startsWith('branch-')){ const slug=path.replace('branch-',''); root.innerHTML=BranchDetailPage(slug); }
@@ -285,6 +300,9 @@ function render(){
     $$('.nav-link').forEach(a=>{a.classList.toggle('active', a.getAttribute('href')==='#'+path || (path.startsWith('branch') && a.getAttribute('href')==='#branches') || (path.startsWith('service') && a.getAttribute('href')==='#services'))});
     root.style.opacity='1';
     initInteractions();
+    // a hash link to a non-existent anchor does not scroll the browser, so
+    // moving between pages has to reset the scroll position explicitly
+    if(pathChanged) window.scrollTo({top:0,behavior:'smooth'});
   },120);
 }
 
@@ -304,7 +322,7 @@ function HomePage(){
         </h1>
         <p class="mt-6 text-[17px] leading-7 opacity-70 max-w-[48ch]">A quiet, clean, professional massage sanctuary in BGC, Makati and Pasay. No hard selling. Just excellent touch, warm tea, and a true pause.</p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#booking" class="btn-pill bg-forest text-cream h-[52px] px-8 inline-flex items-center gap-3 font-semibold text-[14px] hover:bg-forest2">BOOK AN APPOINTMENT <span class="w-6 h-6 rounded-full bg-white/15 grid place-items-center">→</span></a>
+          <a href="#booking" onclick="startBooking()" class="btn-pill bg-forest text-cream h-[52px] px-8 inline-flex items-center gap-3 font-semibold text-[14px] hover:bg-forest2">BOOK AN APPOINTMENT <span class="w-6 h-6 rounded-full bg-white/15 grid place-items-center">→</span></a>
           <a href="#services" class="btn-pill border border-line bg-card h-[52px] px-7 inline-flex items-center font-semibold text-[14px] hover:bg-paper">EXPLORE SERVICES</a>
         </div>
         <div class="mt-10 grid grid-cols-3 gap-6 border-t border-line pt-8 max-w-[520px]">
@@ -391,7 +409,7 @@ function HomePage(){
           <div class="bg-white/10 border border-white/10 rounded-full px-4 h-10 inline-flex items-center text-[12px]">Valid until Dec 2026</div>
         </div>
         <div class="mt-8 flex gap-3">
-          <a href="#booking" class="btn-pill bg-cream text-forest h-12 px-7 inline-flex items-center font-semibold text-[13px]">CLAIM OFFER →</a>
+          <a href="#booking" onclick="startBooking()" class="btn-pill bg-cream text-forest h-12 px-7 inline-flex items-center font-semibold text-[13px]">CLAIM OFFER →</a>
           <a href="#promos" class="btn-pill border border-white/20 h-12 px-7 inline-flex items-center font-semibold text-[13px]">ALL PROMOS</a>
         </div>
       </div>
@@ -443,7 +461,7 @@ function HomePage(){
   <section class="max-w-[1320px] mx-auto px-6 lg:px-8 py-16">
     <div class="rounded-[28px] border border-line bg-paper p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 reveal">
       <div><div class="font-serif text-[32px] lg:text-[44px] leading-[0.9] tracking-[-0.03em]">Ready to unwind?<br/><span class="italic font-light">We'll keep it quiet.</span></div><div class="mt-3 text-[14px] opacity-60">3 branches • Open daily 2PM-12MN • Online booking takes 40 seconds</div></div>
-      <div class="flex gap-3"><a href="#booking" class="btn-pill bg-forest text-cream h-[52px] px-8 inline-flex items-center font-semibold">BOOK NOW</a><a href="#branches" class="btn-pill bg-card border border-line h-[52px] px-8 inline-flex items-center font-semibold">FIND A BRANCH</a></div>
+      <div class="flex gap-3"><a href="#booking" onclick="startBooking()" class="btn-pill bg-forest text-cream h-[52px] px-8 inline-flex items-center font-semibold">BOOK NOW</a><a href="#branches" class="btn-pill bg-card border border-line h-[52px] px-8 inline-flex items-center font-semibold">FIND A BRANCH</a></div>
     </div>
   </section>
   `;
@@ -509,7 +527,7 @@ function BranchesPage(){
     </div>
     <div class="mt-12 bg-card border border-line rounded-[24px] p-6 lg:p-8 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
       <div><h3 class="font-serif text-[28px] leading-[0.95]">Same sanctuary standards,<br/>every branch.</h3><div class="mt-6 grid grid-cols-2 gap-4 text-[13px] leading-5"><div class="flex gap-3"><span>✓</span><span>NCII certified therapists, monthly retraining</span></div><div class="flex gap-3"><span>✓</span><span>Fresh linens, disposable undergarments</span></div><div class="flex gap-3"><span>✓</span><span>No phone, no chatter policy in rooms</span></div><div class="flex gap-3"><span>✓</span><span>Ginger tea + warm towel after every session</span></div></div></div>
-      <div class="bg-paper border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.14em] opacity-60 font-semibold">HOURS & CONTACT</div><div class="mt-3 text-[14px] leading-6">Open Daily 2PM-12MN<br/>Last call 11PM (60min)<br/><br/>Central: +63 917 123 4567<br/>Email: hello@gentlehands.ph<br/><br/><a href="#booking" class="text-forest font-semibold underline">Book online — fastest</a></div></div>
+      <div class="bg-paper border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.14em] opacity-60 font-semibold">HOURS & CONTACT</div><div class="mt-3 text-[14px] leading-6">Open Daily 2PM-12MN<br/>Last call 11PM (60min)<br/><br/>Central: +63 917 123 4567<br/>Email: hello@gentlehands.ph<br/><br/><a href="#booking" onclick="startBooking()" class="text-forest font-semibold underline">Book online — fastest</a></div></div>
     </div>
   </section>`;
 }
@@ -715,7 +733,7 @@ function DashboardPage(){
   const revenue=bookings.reduce((s,b)=>s+b.total,0);
   return `
   <section class="max-w-[1320px] mx-auto px-6 lg:px-8 pt-10">
-    <div class="flex items-end justify-between gap-6"><div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">PETERSWEB SAAS • OWNER DASHBOARD</div><h1 class="font-serif text-[40px] leading-[0.9] tracking-[-0.04em] mt-3">Business → Branches → Services → Booking → CRM → Dashboard</h1></div><a href="#booking" class="hidden lg:inline-flex h-11 px-6 rounded-full bg-forest text-cream text-[13px] font-semibold items-center">+ New Booking</a></div>
+    <div class="flex items-end justify-between gap-6"><div><div class="text-[11px] tracking-[0.2em] opacity-60 font-semibold">PETERSWEB SAAS • OWNER DASHBOARD</div><h1 class="font-serif text-[40px] leading-[0.9] tracking-[-0.04em] mt-3">Business → Branches → Services → Booking → CRM → Dashboard</h1></div><a href="#booking" onclick="startBooking()" class="hidden lg:inline-flex h-11 px-6 rounded-full bg-forest text-cream text-[13px] font-semibold items-center">+ New Booking</a></div>
     <div class="mt-8 grid md:grid-cols-4 gap-4">
       <div class="bg-card border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.12em] opacity-60">TOTAL BOOKINGS</div><div class="font-serif text-[32px] mt-2">${bookings.length}</div><div class="text-[11px] opacity-60 mt-1">Mock localStorage CRM</div></div>
       <div class="bg-card border border-line rounded-[18px] p-5"><div class="text-[11px] tracking-[0.12em] opacity-60">EST. REVENUE</div><div class="font-serif text-[32px] mt-2">${money(revenue)}</div><div class="text-[11px] opacity-60 mt-1">From mock bookings</div></div>
