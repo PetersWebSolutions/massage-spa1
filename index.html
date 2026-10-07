@@ -743,9 +743,24 @@ function initInteractions(){
   }
 }
 
+// Keep the URL in sync with the current selection. BookingPage() re-reads
+// branch/service/promo from the hash on EVERY render, so if the URL keeps a
+// stale value the user's click gets overwritten straight away. Syncing the
+// hash here (with replaceState, which does not fire hashchange) makes the
+// param agree with state, so deep links still work and clicks always stick.
+function syncBookingHash(){
+  if(!location.hash.startsWith('#booking')) return;
+  const p=new URLSearchParams();
+  if(bookingState.branchId) p.set('branch',bookingState.branchId);
+  if(bookingState.serviceId) p.set('service',bookingState.serviceId);
+  if(bookingState.promo) p.set('promo',bookingState.promo);
+  const want='#booking?'+p.toString();
+  try{ if(location.hash!==want) history.replaceState(null,'',want); }catch(e){}
+}
 function setBooking(upd){
   if(upd.guest) bookingState.guest={...bookingState.guest, ...upd.guest};
   bookingState={...bookingState, ...upd};
+  if(upd.branchId||upd.serviceId||upd.promo!==undefined) syncBookingHash();
   if(upd.branchId||upd.serviceId||upd.date||upd.time||upd.step!==undefined||upd.addons!==undefined) render();
 }
 function toggleAddon(id){
@@ -757,6 +772,7 @@ function toggleAddon(id){
 function applyPromo(){
   const v=$('#promoInput').value.trim().toUpperCase();
   bookingState.promo=v;
+  syncBookingHash();
   toast(v?`Promo ${v} applied`:'Promo cleared');
   render();
 }
